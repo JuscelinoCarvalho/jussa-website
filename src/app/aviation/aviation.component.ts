@@ -8,7 +8,6 @@ import { MatCardModule } from '@angular/material/card';
 })
 
 export class AviationComponent {
-  public mat = MatCardModule
   public videoPhenom100 = "../../assets/video/Phenom100.mp4"
   public videoDecolagemCessna210 = "../../assets/video/DecolagemLow.mp4"
   public videoJussaPousoSkylane = "../../assets/video/EuPousandoSkylane.mp4"

@@ -18,13 +18,9 @@ import { NatureComponent } from './nature/nature.component';
 import { NauticComponent } from './nautic/nautic.component';
 import { ResumeComponent } from './resume/resume.component';
 import { PdfViewerModule, PdfViewerComponent } from 'ng2-pdf-viewer';
+/* MATERIALs */
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-
-const material = [
-  MatCardModule,
-  MatIconModule
-]
 
 @NgModule({
   declarations: [
@@ -55,4 +51,5 @@ const material = [
   providers: [PdfViewerComponent],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
