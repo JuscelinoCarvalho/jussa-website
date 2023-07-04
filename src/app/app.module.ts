@@ -18,7 +18,13 @@ import { NatureComponent } from './nature/nature.component';
 import { NauticComponent } from './nautic/nautic.component';
 import { ResumeComponent } from './resume/resume.component';
 import { PdfViewerModule, PdfViewerComponent } from 'ng2-pdf-viewer';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
+const material = [
+  MatCardModule,
+  MatIconModule
+]
 
 @NgModule({
   declarations: [
@@ -35,14 +41,16 @@ import { PdfViewerModule, PdfViewerComponent } from 'ng2-pdf-viewer';
     MusicComponent,
     NatureComponent,
     NauticComponent,
-    ResumeComponent
+    ResumeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     PdfViewerModule,
-    ReactiveFormsModule    
+    ReactiveFormsModule,
+    MatCardModule,
+    MatIconModule    
   ],
   providers: [PdfViewerComponent],
   bootstrap: [AppComponent]
