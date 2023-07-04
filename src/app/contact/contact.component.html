@@ -1,0 +1,50 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<section class="hero is-link is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">
+        Contact Me! - Under Construction - e-mail to: juscelino.carvalho@gmail.com
+      </h2>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="title"></div>
+  <div class="container">
+    <!-- Contact Form -->
+    <form (ngSubmit)="submitForm()" #contactForm="ngForm" action="" method="POST" encType="multipart/form-data">
+
+      <!-- name -->
+      <div class="field">
+        <label class="label">Name: </label>
+        <input type="text" name="name" class="input" [(ngModel)]="name" #nameInput="ngModel"  required >
+        <div class="help is-error titleError" *ngIf="nameInput.invalid && nameInput.touched">⚠️Your name is required!</div>
+      </div>
+
+      <!-- e-mail -->
+      <div class="field">
+        <label class="label">E-mail: </label>
+        <input type="email" name="_replyto" class="input" [(ngModel)]="email" #emailInput="ngModel" required email>
+        <div class="help ir-error titleError" *ngIf="emailInput.invalid && emailInput.touched">⚠️Your e-mail is required and must be a valid e-mail format.</div>
+      </div>
+
+      <!-- message -->
+      <div class="field">
+        <label class="label">Message: </label>
+        <textarea name="message" class="textarea" [(ngModel)]="message"></textarea>
+      </div>
+
+      <input type="hidden" name="_subject" value="Contact form submitted">
+      <input type="hidden" name="_after" value="https://jussa.com.br/">
+      <input type="hidden" name="_honeypot" value="">
+      <input type="hidden" name="_confirmation" value="">
+
+      <!-- submit button -->
+      <!-- Inserir no button após o class. Juscelino - 2023-03-12 -->
+      <!-- [disabled]="contactForm.invalid" -->
+      <button type="submit" class="button is-large w3-btn w3-border" value="Send" [disabled]="contactForm.invalid">⚠️&nbsp;Enviar</button>
+    </form>
+  </div>
+</section>

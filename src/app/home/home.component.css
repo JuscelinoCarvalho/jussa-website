@@ -1,0 +1,320 @@
+.hero {
+  height: 680px;
+  background-image: url('../../assets/img/RioLanchaPorSol2.jpg') !important;
+  background-size: cover;
+  background-position: center center;
+}
+
+/*
+
+.img-blur{
+  background: url({{imagesList}}) center no-repeat;
+  background-size: auto, 400px;
+  filter: none;
+  z-index: 1;
+  position: relative;
+  max-width: 400px;
+  height: 600px;
+  margin: 0 auto;
+}
+
+.img-blur-wrap{
+  position: relative;
+}
+
+.img-blur-bg {
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../../assets/img/ponte-linda.jpeg')  center no-repeat;
+  background-size: auto, cover;
+  filter: blur(5px);
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  z-index: 1
+}
+*/
+/*        HEART IMAGE         */
+img {
+  width: 250px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  --_m: radial-gradient(#000 69%,#0000 70%) 84.5% fill/100%;
+  -webkit-mask-box-image: var(--_m);
+             mask-border: var(--_m);
+  clip-path: polygon(-41% 0,50% 91%, 141% 0);
+}
+
+/* fallback until better support for mask-border */
+@supports not (-webkit-mask-box-image: var(--_m)) {
+  img {
+   --_m:
+     radial-gradient(circle at 60% 63%,#000 64%,#0000 65%) top left /50% 50% no-repeat,
+     radial-gradient(circle at 40% 63%,#000 64%,#0000 65%) top right/50% 50% no-repeat,
+     linear-gradient(#000 0 0) bottom/100% 50% no-repeat;
+   -webkit-mask: var(--_m);
+           mask: var(--_m);
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  grid-auto-flow: column;
+  place-content: center;
+  gap: 30px;
+  background: pink;
+  filter: drop-shadow(0 0 10px #ff3e60)
+}
+/*      END HEART IMAGE       */
+
+/*---------------------------------------------------------------------------------------------------*/
+
+/* IMAGES UNFOLDING */
+html,
+body {
+  min-height: 100vh;
+  display: flex;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+  overflow-x: hidden;
+}
+
+.title {
+  font: 1.3em/1 monospace;
+  font-variant: small-caps;
+  letter-spacing: 0.5em;
+  margin: 1.5em;
+}
+
+.gallery {
+  margin-top: 5%;
+  perspective: 700px;
+  width: 100vw;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  flex-flow: row wrap;
+}
+
+ul {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0.1em;
+  perspective-origin: center center;
+  transform-style: preserve-3d;
+  transform: rotateX(40deg);
+  transition: all 0.4s;
+}
+
+ul:hover {
+  transform: translateZ(100px) rotateX(20deg);
+  z-index: 999;
+}
+
+ul:hover li {
+  filter: grayscale(0);
+}
+
+li {
+  position: absolute;
+  left: 0;
+  top: 0;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s, filter 1s;
+  background: coral;
+  filter: grayscale(1);
+}
+/*
+Setup individual planes final poistion(by left top) and initial position(by transform)
+*/
+li:first-of-type {
+  transform: none;
+}
+li:nth-of-type(2) {
+  left: 100%;
+  transform-origin: left center;
+  transform: rotateY(180deg);
+}
+li:nth-of-type(3) {
+  top: 100%;
+  transform-origin: center top;
+  transform: rotateX(-180deg);
+}
+li:nth-of-type(4) {
+  left: -100%;
+  transform-origin: right center;
+  transform: rotateY(-180deg);
+}
+li:nth-of-type(5) {
+  top: -100%;
+  transform-origin: center bottom;
+  transform: rotateX(180deg);
+}
+li:nth-of-type(6) {
+  top: 100%;
+  left: 100%;
+  transform-origin: center top;
+  transform: rotateX(-180deg);
+}
+li:nth-of-type(7) {
+  top: 100%;
+  left: -100%;
+  transform-origin: right center;
+  transform: rotateY(-180deg);
+}
+li:nth-of-type(8) {
+  top: -100%;
+  left: -100%;
+  transform-origin: center bottom;
+  transform: rotateX(180deg);
+}
+li:nth-of-type(9) {
+  top: -100%;
+  left: 100%;
+  transform-origin: left center;
+  transform: rotateY(180deg);
+}
+/*
+Setup transition-delay, for mouseout state
+*/
+li:nth-of-type(2),
+li:nth-of-type(3),
+li:nth-of-type(4),
+li:nth-of-type(5) {
+  transition-delay: 0.03s;
+}
+li:nth-of-type(6),
+li:nth-of-type(7),
+li:nth-of-type(8),
+li:nth-of-type(9) {
+  transition-delay: 0s;
+}
+ul:hover :nth-of-type(2),
+ul:hover :nth-of-type(3),
+ul:hover :nth-of-type(4),
+ul:hover :nth-of-type(5) {
+  transition-delay: 0s;
+}
+ul:hover :nth-of-type(6),
+ul:hover :nth-of-type(7),
+ul:hover :nth-of-type(8),
+ul:hover :nth-of-type(9) {
+  transition-delay: 0.2s;
+}
+/*
+Setup planes final state
+*/
+ul:hover :nth-of-type(2),
+ul:hover :nth-of-type(4),
+ul:hover :nth-of-type(7),
+ul:hover :nth-of-type(9) {
+  transform: rotateY(0);
+}
+ul:hover :nth-of-type(3),
+ul:hover :nth-of-type(5),
+ul:hover :nth-of-type(6),
+ul:hover :nth-of-type(8) {
+  transform: rotateX(0);
+}
+/*
+Set background position
+*/
+ul li {
+  background-size: 300% 300%;
+}
+li:nth-of-type(1) {
+  background-position: center center;
+}
+li:nth-of-type(2) {
+  background-position: right center;
+}
+li:nth-of-type(3) {
+  background-position: center bottom;
+}
+li:nth-of-type(4) {
+  background-position: left center;
+}
+li:nth-of-type(5) {
+  background-position: center top;
+}
+li:nth-of-type(6) {
+  background-position: right bottom;
+}
+li:nth-of-type(7) {
+  background-position: left bottom;
+}
+li:nth-of-type(8) {
+  background-position: left top;
+}
+li:nth-of-type(9) {
+  background-position: right top;
+}
+/*
+Set background image source
+*/
+ul:nth-of-type(1) li {
+  background-image: url("../../assets/img/galery/aviacao2.png");
+}
+ul:nth-of-type(1) {
+  width: 115.5px;
+  height: 80px;
+}
+ul:nth-of-type(2) li {
+  background-image: url("../../assets/img/galery/mecanica.png");
+}
+ul:nth-of-type(2) {
+  width: 115.5px;
+  height: 80px;
+}
+ul:nth-of-type(3) li {
+  background-image: url("../../assets/img/galery/nautica.png");
+}
+ul:nth-of-type(3) {
+  width: 115.5px;
+  height: 80px;
+}
+ul:nth-of-type(4) li {
+  background-image: url("../../assets/img/galery/musica.png");
+}
+ul:nth-of-type(4) {
+  width: 115.5px;
+  height: 80px;
+}
+ul:nth-of-type(5) li {
+  background-image: url("../../assets/img/galery/Entrevistas.png");
+}
+ul:nth-of-type(5) {
+  width: 115.5px;
+  height: 80px;
+}
+ul:nth-of-type(6) li {
+  background-image: url("../../assets/img/galery/natureza.png");
+}
+ul:nth-of-type(6) {
+  width: 115.5px;
+  height: 80px;
+}
+/*
+Hide debug label
+*/
+li {
+  text-indent: 999px;
+  overflow: hidden;
+}
+/*  END IMAGES UNFOLDING      */
+
+
+.bodytext {
+  display: flex;
+  font: 15px bold;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  margin: 0.1em;
+}

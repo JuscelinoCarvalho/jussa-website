@@ -1,0 +1,13 @@
+
+
+<div class="container" [(ngModel)]="pdfSource">
+  <pdf-viewer [src]="pdfSource"
+    [render-text]="true"
+    [original-size]="false"
+    style="width: 1024px; height: 600px;  margin: 0 auto;"
+    (after-load-complete)="onLoaded($event)">
+  </pdf-viewer>
+</div>
+
+
+<button class="button" (click)="print()" [disabled]="!isPdfLoaded">Print</button>

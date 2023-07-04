@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+    <body>
+        <div class="container" id="videos-natureza">
+            <div id="lancha" class="filmes">
+                <h1>Lancha Rio Sucuriú</h1>
+                <video muted id="lancha-rio-sucuriu" controls>
+                    <source src="{{videoSourceLancha}}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div id="lancha-bone-a-praia" class="filmes">
+                <h1>Gado Nelore</h1>
+                <video controls>
+                    <source [src]="videoSourceLanchaBoneBranco" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div id="lancha-musica-amiga-linda" class="filmes">
+                <h1>Lancha</h1>
+                <video controls>
+                    <source [src]="videoSourceLanchaAmigaLinda" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div id="uly-lancha" class="filmes">
+                <h1>Ulysses Lancha</h1>
+                <video controls>
+                    <source [src]="videoUlyLancha" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
