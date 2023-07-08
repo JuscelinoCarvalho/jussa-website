@@ -12,4 +12,14 @@ export class MechanicsComponent {
   public videoSubaruOutbackSuspensaoDianteira = "../../assets/video/SubaruOutbackSuspDiant.mp4"
   public videoSubaruOutbackBuchaTraseira = "../../assets/video/SubaruOutbackBuchaTras.mp4"
   public videoPorcheTiago = "../../assets/video/PorsheThiago.mp4"
+
+
+  public TesteJussa() {
+    var myVideo: any = document.getElementById("videoteste");
+    myVideo.width = 70;
+  }
+  
+
 }
+
+

@@ -17,10 +17,11 @@ import { MusicComponent } from './music/music.component';
 import { NatureComponent } from './nature/nature.component';
 import { NauticComponent } from './nautic/nautic.component';
 import { ResumeComponent } from './resume/resume.component';
-import { PdfViewerModule, PdfViewerComponent } from 'ng2-pdf-viewer';
+import { PdfViewerComponent, PdfViewerModule } from 'ng2-pdf-viewer';
 /* MATERIALs */
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { MatIconModule } from '@angular/material/icon';
     PdfViewerModule,
     ReactiveFormsModule,
     MatCardModule,
-    MatIconModule    
+    MatIconModule,
+    FlexLayoutModule
   ],
   providers: [PdfViewerComponent],
   bootstrap: [AppComponent]
