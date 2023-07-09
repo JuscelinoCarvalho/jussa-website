@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Hello Valentica';
+    src: url('../assets/font/HelloValentica/HelloValentina.ttf') format('truetype');
+  }
+    .headerFont{
+       font-size: 30px;
+       font-family: 'Hello Valentica';
+       color:cornflowerblue;
+    }

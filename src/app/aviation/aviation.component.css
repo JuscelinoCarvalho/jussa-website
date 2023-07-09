@@ -10,7 +10,6 @@
     height: auto;
 }
 
-
 .filmes{
     border-radius: 25px;
     margin-left: 10px;
@@ -20,12 +19,11 @@
     font: bold;
     font-size: large;
     color: bisque;
-    width: "150";
-    height: "150"
 }
 
 video{
     border-radius: 25px;
+    max-height: 300px;
 }
 
 body{
@@ -34,7 +32,7 @@ body{
     background-image: url("../../assets/img/galery/aviacao2.png");
     background-repeat: no-repeat;
     background-size: 100%;
-    height: 1024px;
+    height: 600px;
 }
 
 
