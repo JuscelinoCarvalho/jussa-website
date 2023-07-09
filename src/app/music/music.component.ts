@@ -16,5 +16,11 @@ export class MusicComponent {
   public videoDirceuDurval = "../../assets/video/Dirceu_e_Durval.mp4"
   public videoJussaLoosingMyReligion = "../../assets/video/JussaLoosingMyReligion.mp4"
   public videoJussaSuperFantastico = "../../assets/video/JussaSuperFantastico.mp4"
+
+  public vdLuisGonzaga = "../../assets/video/LuisGonzaga.mp4"
+  public vdSanfonaBranca = "../../assets/video/SanfonaBranca.mp4"
+  public vdCelAntonioBento = "../../assets/video/CelAntonioBento.mp4"
+  public vdPrecisoAcabarLogoComIsso = "../../assets/video/PrecisoAcabarComIsso.mp4"
+  public vdMusicaFazenda = "../../assets/video/MusicaFazenda.mp4"
   
 }
