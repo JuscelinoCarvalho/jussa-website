@@ -12,4 +12,5 @@ export class EntrevistasComponent {
   public RCNPart2 = "../../assets/video/TVCProgressoEmPauta2.mp4"
   public RadioCacula1 = "../../assets/video/RadioCacula1.mp4"
   public RCNFull = "../../assets/video/RCN_FULL-2.mp4"
+  public RadioCaculaSEJUVEL = "../../assets/video/EntrevistaRadioCaçula_SEJUVEL.mp4"
 }
